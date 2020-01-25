@@ -1,5 +1,6 @@
 :root {
-  font: 16px / 1 sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Quicksand', sans-serif;
 }
 
 html {
@@ -10,3 +11,383 @@ body {
   margin: 0;
   min-height: 100%;
 }
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+  align-items: center;
+  border: solid blue 2px;
+}
+
+.homeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  width: 60%;
+  align-items: center;
+  border: solid green 2px;
+}
+
+.inputContainer {
+}
+
+.homeTitle {
+  display: flex;
+  flex-direction: column;
+  font-size: 60px;
+  /* font-family: 'Poppins', sans-serif; */
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  border: solid green 2px;
+}
+
+.homeLogo {
+  padding: 0;
+  margin: 0;
+  /* padding-bottom: 70px; */
+}
+
+.appointmentInfo {
+  border: solid red 2px;
+  display: flex;
+  width: 100%;
+}
+
+.nameInfo {
+  display: flex;
+}
+
+.infoTitle {
+  font-weight: 1000;
+  font-size: 18px;
+  margin-left: 2rem;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  list-style: none;
+  /* border: solid red 3px; */
+  justify-content: center;
+  margin: 15px 0 10px 0;
+  text-decoration: none;
+}
+
+.upcoming-shows {
+  text-align: center;
+}
+
+.navListItem {
+  margin-right: 2rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: grey;
+}
+
+.navLink:hover {
+  color: red;
+}
+
+.event-info {
+  padding: 10px;
+}
+
+.events-box {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.5rem;
+  /* color: black; */
+  border: solid rgb(65, 159, 173) 4px;
+  background-color: rgb(166, 224, 166);
+  font-size: 28px;
+  list-style: none;
+  /* height: 7rem; */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.eventsList1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: black;
+  /* border: solid rgb(65, 159, 173) 4px; */
+  /* background-color: rgb(166, 224, 166); */
+  font-size: 28px;
+  list-style: none;
+  /* height: 7rem; */
+  align-items: center;
+}
+
+.eventsList1 li {
+  margin: auto 20px;
+}
+
+/* .event-info {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  z-index: 10;
+} */
+
+p {
+  /* margin-right: 2rem; */
+}
+
+.outterDiv {
+  display: flex;
+  width: 100%;
+  height: 20rem;
+  margin-top: 20rem;
+  justify-content: center;
+}
+
+.innerDiv {
+  flex: 1;
+  font-size: 1.5rem;
+  margin-left: 60px;
+}
+
+.innerDiv:last-child {
+  margin-right: 60px;
+}
+
+.tips-advice,
+.coupons,
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tips-advice {
+  background-image: url('./images/tips-and-advices.jpg');
+}
+
+.coupons {
+  background-image: url('./images/our-coupons.jpg');
+}
+
+.services {
+  background-image: url('./images/our-services.jpg');
+}
+
+.innerDiv h2 {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.innerDiv h2::after {
+  position: relative;
+  top: 10px;
+  right: -25%;
+  content: '';
+  width: 100%;
+  height: 40px;
+  border: thick solid transparent;
+  border-top-color: red;
+}
+
+.innerDiv h2 em {
+  color: red;
+  font-style: normal;
+  font-size: 3rem;
+  line-height: 2rem;
+}
+
+.innerDiv .cta {
+  font-size: 1rem;
+  text-align: right;
+}
+
+.innerDiv .cta .button {
+}
+
+.subscribeButton {
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 13px 40px 13px 40px;
+  height: 30px;
+  width: 20%;
+  font-size: 15px;
+  /* border: solid pink 3px; */
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.subscribeButton:hover {
+  background-color: rgb(240, 50, 77);
+}
+
+/* body {
+  --grid-color: #000;
+  --grid-weight: 1px;
+  --grid-spacing: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-position: center center, center center;
+  background-size: var(--grid-spacing) var(--grid-spacing),
+    var(--grid-spacing) var(--grid-spacing);
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--grid-color),
+      var(--grid-color) var(--grid-weight),
+      transparent var(--grid-weight),
+      transparent var(--grid-spacing)
+    ),
+    repeating-linear-gradient(
+      -90deg,
+      var(--grid-color),
+      var(--grid-color) var(--grid-weight),
+      transparent var(--grid-weight),
+      transparent var(--grid-spacing)
+    );
+  color: #000;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  width: 100%;
+} */
+/* 
+.contain {
+  width: 100%;
+  max-width: 780px;
+  padding: 0 16px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li,
+input {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  margin: 12px 0;
+  border: 1px solid #000;
+  box-shadow: -4px 4px 0px 0px #000;
+  font-family: 'IBM Plex Mono', monospace;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.remove {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  margin: 0 0 0 16px;
+  padding: 0;
+  flex: 0 0 16px;
+  border: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.remove::before,
+.remove::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  height: 100%;
+  width: 2px;
+  background: #000;
+}
+
+.remove::before {
+  transform: rotate(-45deg);
+}
+
+.remove::after {
+  transform: rotate(45deg);
+}
+
+.remove:focus {
+  outline: none;
+  background: #000;
+  color: #fff;
+}
+
+.remove:focus::before,
+.remove:focus::after {
+  background: #fff;
+}
+
+li:hover,
+input:hover {
+  box-shadow: -2px 2px 0px 0px #000;
+}
+
+li:focus,
+input:focus {
+  color: #00f;
+  outline: none;
+  border: 1px solid #00f;
+  box-shadow: -2px 2px 0px 0px #00f;
+}
+
+li.complete {
+  background: repeating-linear-gradient(
+      0deg,
+      #fff,
+      #fff 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        #fff,
+        #fff 1px,
+        transparent 1px,
+        transparent 2px
+      )
+      #000;
+}
+
+li.complete div {
+  text-decoration: line-through;
+} */
