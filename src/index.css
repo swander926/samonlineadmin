@@ -18,7 +18,7 @@ body {
   justify-content: center;
   height: 600px;
   align-items: center;
-  border: solid blue 2px;
+  /* border: solid blue 2px; */
 }
 
 .homeBox {
@@ -28,7 +28,7 @@ body {
   height: 500px;
   width: 60%;
   align-items: center;
-  border: solid green 2px;
+  /* border: solid green 2px; */
 }
 
 .inputContainer {
@@ -42,12 +42,14 @@ body {
   justify-content: center;
   height: 100px;
   align-items: center;
-  border: solid green 2px;
+  /* border: solid green 2px; */
 }
 
 .homeLogo {
   padding: 0;
   margin: 0;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
   /* padding-bottom: 70px; */
 }
 
@@ -115,6 +117,24 @@ body {
   align-items: center;
   margin-bottom: 10px;
 }
+
+.changed-color {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.5rem;
+  /* color: black; */
+  border: solid rgb(180, 48, 15) 4px;
+  background-color: lightcoral;
+  font-size: 28px;
+  list-style: none;
+  /* height: 7rem; */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 
 .eventsList1 {
   display: flex;
@@ -243,6 +263,97 @@ p {
 .subscribeButton:hover {
   background-color: rgb(240, 50, 77);
 }
+
+/* html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* Review CSS */
+
+/* .reviewContainer {
+  width: 30%;
+  /* border: solid red 2px; */
+
+
+
+/* .star-rating {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.star {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  background-color: grey;
+  -webkit-clip-path: polygon(
+    50% 0%,
+    63% 38%,
+    100% 38%,
+    69% 59%,
+    82% 100%,
+    50% 75%,
+    18% 100%,
+    31% 59%,
+    0% 38%,
+    37% 38%
+  );
+  clip-path: polygon(
+    50% 0%,
+    63% 38%,
+    100% 38%,
+    69% 59%,
+    82% 100%,
+    50% 75%,
+    18% 100%,
+    31% 59%,
+    0% 38%,
+    37% 38%
+  );
+}
+
+.star.selected {
+  background-color: green;
+}
+
+p {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.reviewTitle {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 50px;
+}
+
+.reviewTitle:hover {
+  color: rgb(148, 40, 40);
+
+}
+
+.testPageColor {
+  background-color: blue;
+}
+
+.AnotherTestPage {
+  background-color: blue;
+
+
+
+
 
 /* body {
   --grid-color: #000;
@@ -391,3 +502,23 @@ li.complete {
 li.complete div {
   text-decoration: line-through;
 } */
+
+
+
+.event-detail {
+  margin: 10px;
+}
+
+.eventsList1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  width: 80%;
+  font-size: 20px;
+}
+
+.neitherTitle {
+  margin-top: 20px;
+  text-decoration: underline;
+}

@@ -3,8 +3,10 @@ import HelloWorld from '../components/HelloWorld'
 import Axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import samlogo from '../images/samlogo.svg'
+import HeaderComponent from '../components/HeaderComponent'
 
-const HomePage = () => {
+
+const AccessPage = () => {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [success, setSuccess] = useState(false)
@@ -21,11 +23,10 @@ const HomePage = () => {
   }
   return (
     <>
+    <HeaderComponent/>
       {success ? (
-        <Redirect to="/AccessPage" />
+        <Redirect to="/AppointmentPage" />
       ) : (
-        // <Redirect to="/HomePage" />
-
         <div className="homeContainer">
           <div className="homeBox">
             <h1 className="homeTitle">SWANDER'S AUTO</h1>
@@ -49,10 +50,10 @@ const HomePage = () => {
               <button type="Submit">Login</button>
             </form>
           </div>
-                  </div>
+        </div>
       )}
     </>
   )
 }
 
-export default HomePage
+export default AccessPage

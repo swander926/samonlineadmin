@@ -1,52 +1,59 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Moment from 'react-moment'
+import ChangedColorTest from '../components/ChangedColorTest'
+import { Redirect } from 'react-router-dom'
+import HeaderComponent from '../components/HeaderComponent'
 
-const VehiclesPage = () => {
+const AppointmentPage = () => {
   const [appointment, setAppointment] = useState([])
+  const [isAuthorized, setIsAuthorized] = useState(true)
 
   const getAppointmentData = async () => {
-    const resp = await axios.get('https://localhost:5001/api/Appointment')
-    setAppointment(resp.data)
+    try {
+      const resp = await axios.get('https://samonlineback.herokuapp.com/api/Appointment', {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        },
+      })
+      setAppointment(resp.data)
+    } catch (error) {
+      console.log({ error })
+      if (error.response.status === 401) {
+        setIsAuthorized(false)
+      }
+    }
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      setIsAuthorized(false)
+    }
+  }, [])
 
   useEffect(() => {
     getAppointmentData()
   }, [])
+
   return (
-    <div>
-      <h2 className="upcoming-shows">Upcoming Appointments</h2>
-      <section>
-        <section className="event-info">
-          {appointment.map(appointment => {
-            return (
-              <div className="events-box">
-                <ul className="eventsList1">
-                  <li>
-                    <strong>Name:</strong>{' '}
-                    {`${appointment.firstName} ${appointment.lastName}`}
-                  </li>
-                  <li>E-mail: {appointment.email}</li>
-                  <li>Vehicle: {appointment.make}</li>
-                  <li>{appointment.model}</li>
-                  <li>{appointment.year}</li>
-                </ul>
-                <ul className="eventsList2">
-                  <li className="event-detail">
-                    Request Time:
-                    <Moment format="MMM Do, YYYY, h:mm: a">
-                      {appointment.requestedAppointment}
-                    </Moment>
-                  </li>
-                  <li>{appointment.reason}</li>
-                </ul>
-              </div>
-            )
-          })}
-        </section>
-      </section>
-    </div>
+    <>
+      <HeaderComponent />
+      {isAuthorized ? (
+        <div>
+          <h2 className="upcoming-shows">Upcoming Appointments</h2>
+          <section>
+            <section className="event-info">
+              {appointment.map(appointment => {
+                return <ChangedColorTest appointment={appointment} />
+              })}
+            </section>
+          </section>
+        </div>
+      ) : (
+        <Redirect to="/" />
+      )}
+    </>
   )
 }
 
-export default VehiclesPage
+export default AppointmentPage
