@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import Axios from 'axios'
+import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import HeaderComponent from '../components/HeaderComponent'
 
@@ -83,12 +83,12 @@ const VehiclesPage = () => {
   const onSubmit = async event => {
     event.preventDefault()
 
-    const resp = await Axios.post(
+    const resp = await axios.post(
       'https:///samonlineback.herokuapp.com/api/CarSales',
       {
         description: description,
-        mileage: mileage,
-        price: price,
+        mileage: parseInt(mileage),
+        price: parseInt(price),
         make: make,
         model: model,
         year: year,
@@ -99,6 +99,44 @@ const VehiclesPage = () => {
     )
     console.log(resp.data)
   }
+
+  useEffect(() => {
+    const makeApiCall = async () => {
+      const resp = await axios.get(`//samonlineback.herokuapp.com/make`)
+      if (resp.status === 200) {
+        setMakeData(resp.data.terms)
+      }
+    }
+makeApiCall()
+  }, [])
+
+  const modelApiCall = async () => {
+    if (make) {const resp = await axios.get(`//samonlineback.herokuapp.com/make/${make}/model`)
+    if (resp.status === 200) {
+      setModelData(resp.data.terms)
+    }
+
+    console.log(resp.data)}
+    
+  }
+  useEffect(() => {
+    modelApiCall()
+  }, [make])
+
+  const yearApiCall = async (make, model) => {
+    console.log(`${make} ${model}, in year api`)
+    console.log(`//samonlineback.herokuapp.com/make/${make}/model/${model}`)
+    const resp = await axios.get(
+      `//samonlineback.herokuapp.com/make/${make}/model/${model}`
+    )
+    if (resp.status === 200) {
+      setYearData(resp.data.terms)
+    }
+  }
+
+  useEffect(() => {
+    if (make && model) yearApiCall(make, model)
+  }, [make, model])
 
   return (
     <>
@@ -208,7 +246,6 @@ const VehiclesPage = () => {
                 type="text"
                 onChange={e => setImageUrl(e.target.value)}
                 value={imageUrl}
-                required
               />
             </FormField>
             <FormActions>
