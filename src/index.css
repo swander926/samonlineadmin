@@ -99,6 +99,11 @@ body {
 
 .event-info {
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  /* border: solid black 10px; */
+  flex-direction: column;
+  align-items: center;
 }
 
 .events-box {
@@ -109,13 +114,16 @@ body {
   justify-content: center;
   font-size: 1.5rem;
   /* color: black; */
-  border: solid rgb(65, 159, 173) 4px;
-  background-color: rgb(166, 224, 166);
+  border: solid rgb(180, 48, 15) 4px;
+  background-color: lightcoral;
+  align-items: flex-start;
   font-size: 28px;
   list-style: none;
   /* height: 7rem; */
-  align-items: center;
   margin-bottom: 10px;
+  width: 70%;
+  border-radius: 5px;
+
 }
 
 .changed-color {
@@ -126,13 +134,21 @@ body {
   justify-content: center;
   font-size: 1.5rem;
   /* color: black; */
-  border: solid rgb(180, 48, 15) 4px;
-  background-color: lightcoral;
+  /* border: solid rgb(180, 48, 15) 4px;
+  background-color: lightcoral; */
+  border: solid rgb(65, 159, 173) 4px;
+  background-color: rgb(166, 224, 166);
   font-size: 28px;
   list-style: none;
   /* height: 7rem; */
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 10px;
+  width: 70%;
+  border-radius: 5px;
+}
+
+.redText {
+  color: red;
 }
 
 
@@ -153,6 +169,11 @@ body {
 
 .eventsList1 li {
   margin: auto 20px;
+}
+
+.eventsList2 li {
+  font-size: 18px;
+  line-height: 1;
 }
 
 /* .event-info {
@@ -262,6 +283,23 @@ p {
 
 .subscribeButton:hover {
   background-color: rgb(240, 50, 77);
+}
+
+.submitCompleteDiv {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitButton:hover {
+  background-color: rgb(240, 50, 77);
+
+}
+
+.submitButton:active {
+  background-color: rgb(182, 43, 64);
+
 }
 
 /* html,

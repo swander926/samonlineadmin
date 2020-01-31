@@ -1,8 +1,12 @@
 import React from 'react'
+import HeaderComponent from '../components/HeaderComponent'
+
 
 const TestPage = () => {
   return (
     <>
+              <HeaderComponent />
+
       <div className="outterDiv">
         <div className="innerDiv">
           <div className="tips-advice">

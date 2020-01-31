@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage'
 import TestPage from './pages/TestPage'
 import NotFound from './pages/NotFound'
 import AccessPage from './pages/AccessPage'
+import AttentionPage from './pages/AttentionPage'
+
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <Route exact path="/VehiclesPage" component={VehiclesPage}></Route>
         <Route exact path="/TestPage" component={TestPage}></Route>
         <Route exact path="/AccessPage" component={AccessPage}></Route>
+        <Route exact path="/AttentionPage" component={AttentionPage}></Route>
+
 
         <Route path="*" component={NotFound}></Route>
       </Switch>

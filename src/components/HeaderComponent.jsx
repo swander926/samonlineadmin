@@ -34,8 +34,13 @@ const HeaderComponent = () => {
               </Link>
             </li>
             <li className="navListItem">
+              <Link className="navLink" to="/AttentionPage">
+                <span className="redText">!! Attention !!</span>
+              </Link>
+            </li>
+            <li className="navListItem">
               <Link className="navLink" to="/TestPage">
-                TEST PAGE
+                * Test Page *
               </Link>
             </li>
           </ul>

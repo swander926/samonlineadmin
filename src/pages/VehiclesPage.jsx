@@ -72,6 +72,8 @@ const VehiclesPage = () => {
   const [price, setPrice] = useState('')
   const [imageUrl, setImageUrl] = useState('')
   const [isAuthorized, setIsAuthorized] = useState(true)
+  const [submitted, setSubmitted] = useState(false)
+
   // const [price, setPrice] = useState('')
 
   useEffect(() => {
@@ -98,6 +100,7 @@ const VehiclesPage = () => {
       }
     )
     console.log(resp.data)
+    setSubmitted(true)
   }
 
   useEffect(() => {
@@ -138,9 +141,11 @@ makeApiCall()
     if (make && model) yearApiCall(make, model)
   }, [make, model])
 
+  if (!submitted) {
   return (
     <>
       {isAuthorized ? (
+        
         <Container>
           <HeaderComponent />
           <h1 className="addVehicleTitle">Add New Vehicle:</h1>
@@ -238,7 +243,7 @@ makeApiCall()
               />
             </FormField>
             <FormField>
-              <label>Photos</label>
+              <label>Photos (ImageUrl) </label>
               <input
                 className="phoneInput"
                 name="imageUrl"
@@ -249,7 +254,7 @@ makeApiCall()
               />
             </FormField>
             <FormActions>
-              <button type="submit" onSubmit={onSubmit}>
+              <button type="submit" onSubmit={onSubmit} className="submitButton">
                 Submit
               </button>
               {/* Send Email */}
@@ -257,12 +262,22 @@ makeApiCall()
           </Form>
           {/* <button onClick={() => onSubmit()}>Send Email</button> */}
         </Container>
+        
       ) : (
         <Redirect to="/" />
-      )}
+      // )}
       )}
     </>
   )
-}
+
+
+
+
+} else { return (
+  <>        <Container>
+  <HeaderComponent />
+  <div className="submitCompleteDiv"><h1>Submit Complete</h1></div>
+  </Container></>
+)}}
 
 export default VehiclesPage
